@@ -5,6 +5,7 @@ import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { store } from "./store";
+import { setupListeners } from "@reduxjs/toolkit/dist/query";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -16,3 +17,5 @@ root.render(
     </BrowserRouter>
   </Provider>
 );
+
+setupListeners(store.dispatch)
